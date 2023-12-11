@@ -1,0 +1,18 @@
+ &control
+
+do_bc           = .true.
+do_ic           = .true.
+def_missing_var = .true.
+domain          = 1
+dir_wrf         = '/glade/scratch/yiyuey/GB3domain/WRFGHG/test/em_real/'
+dir_moz         = '/glade/scratch/yiyuey/GB3domain/mozbc/'
+fn_moz          = 'carbon-0006.nc'
+moz_var_suffix  = ''
+
+spc_map = 'CH4_TST -> CH4',
+          'CH4_BCK -> CH4',
+          'CO2_TST -> 1.e-6*[BIGALD]',
+          'CO2_BCK -> 1.e-6*[BIGALD]',
+          'CO_TST -> CO',
+          'CO_BCK -> CO',
+/

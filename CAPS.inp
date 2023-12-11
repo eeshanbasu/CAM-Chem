@@ -1,0 +1,58 @@
+ &control
+
+do_bc           = .true.
+do_ic           = .true.
+def_missing_var = .true.
+domain          = 1
+dir_wrf         = '/glade/scratch/ebasu/ICBC/processing/WRF/'
+dir_moz         = '/glade/scratch/ebasu/ICBC/processing/data/'
+fn_moz          = 'hb0000.nc'
+moz_var_suffix  = ''
+
+spc_map = 'o3 -> [O3]',
+  'no -> [NO]',
+  'no2 -> [NO2]',
+  'n2o5 -> N2O5',
+  'nh3 -> NH3',
+  'hno3 -> HNO3',
+  'h2o2 -> H2O2',
+  'ch4 -> CH4',
+  'co -> CO',
+  'so2 -> [SO2]',
+  'no3 -> NO3',
+  'oh  -> OH',
+  'ho2 -> HO2',
+  'tol -> TOLUENE',
+  'cres -> CRESOL',
+  'mgly -> CH3COCHO',
+  'xyl -> XYLENES',
+  'isop -> ISOP',
+  'form -> CH2O',
+  'aldx -> 0.62000*[CH3CHO]',
+  'ald2 -> 0.38000*[CH3CHO]',
+  'etha -> C2H6',
+  'meoh -> CH3OH',
+  'par -> C3H8+BIGALK',
+  'iole -> 0.5*BIGENE',
+  'ole -> C3H6+MVK+0.5*BIGENE',
+  'eth -> C2H4',
+  'eci->bc_a1+bc_a4;0.113571e9',
+  'ecj->bc_a1+bc_a4;0.264125e9',
+  'p25i->4.66064*[dst_a2];1.e9',
+  'p25j->4.66064*[dst_a1];1.e9',
+  'soila->4.66064*[dst_a3];1.e9',
+  'seas->[ncl_a1]+[ncl_a2]+[ncl_a3];1.e9',
+  'claj->1.2*[ncl_a1];1e9',
+  'naaj->0.8*[ncl_a1];1e9',
+  'orgpai->soa2_a2;1.e9',
+  'no3ai->1.5563e-3*[NH4];2.76186e9',
+  'no3aj->0.832*[NH4];2.76186e9'
+  'aacd -> CH3COOH',
+  'ntr -> ONITR',
+  'pacd -> CH3COOH',
+  'pan -> PAN',
+  'ispd -> MACR',
+  'so4ai -> so4_a2;1.e9',
+  'so4aj -> so4_a1;1.e9',
+  'orgpaj -> soa2_a1+pom_a1;1.e9',
+/
