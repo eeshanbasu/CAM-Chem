@@ -1,7 +1,7 @@
 #!/bin/csh
 
-set yyyy = 2014
-set mon = 04
+set yyyy = 2015
+set mon = $MON
 set file_path = /glade/scratch/ebasu/ICBC/CAM_CHEM/${yyyy}
 
 foreach day (00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32)
@@ -9,13 +9,13 @@ foreach day (00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 2
 if ($mon == 01) then 
 	if ($day == 00) then
         	set prev_year = `expr $yyyy - 1`
-        	set dates = 2013-12-31
+        	set dates = ${prev_year}-12-31
     	else
         	set dates = ${yyyy}-${mon}-${day}
 	endif
 
     	if ($day == 32) then
-        	set dates = ${yyyy}-${month}-01
+        	set dates = ${yyyy}-02-01
     	endif
 endif
 
@@ -42,7 +42,9 @@ if ($mon == 04 || $mon == 06 || $mon == 09 || $mon == 11) then
                 set last_month = `expr $mon - 1`
                 if ($last_month < 10) then
                         set last_month = "0$last_month"
-                endif
+		else if ($last_month == 10) then
+			set last_month = "10"
+		endif
                 set dates = ${yyyy}-${last_month}-31
         else if ($day == 31) then
                 set last_month = `expr $mon + 1`
